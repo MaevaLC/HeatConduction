@@ -1,4 +1,7 @@
 #include "HeatConduction.h"
+#include <cmath>
+
+const double pi = atan(1) * 4;
 
 // abstract base class
 
@@ -57,17 +60,31 @@ void DuFort_Frankel::solve(){
 	u_n[s] = Text_0;
 
 	/* Calculte n = 2 and so on */
-	double x;
 	double r = (D*dt) / (dx*dx);
 	for (int j = 2; j < n+1; j++){
-		x = Xmin;
 		u_nplus1[0] = Text_0;
 		u_nplus1[s] = Text_0;
 		for (int i = 1; i < s; i++){
-			x += dx;
 			u_nplus1[i] = (u_nminus1[i] + 2*r*(u_n[i+1] - u_nminus1[i] + u_n[i-1])) /  (1 + 2*r);
 		}
 		u_nminus1 = u_n;
 		u_n = u_nplus1;
+	}
+}
+
+AnalyticalSolution::AnalyticalSolution() : HeatConduction() {}
+
+AnalyticalSolution::AnalyticalSolution(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
+
+void AnalyticalSolution::solve(){
+	double x = Xmin;
+	double L = Xmax - Xmin;
+	for (int i = 0; i < s+1; i++){
+		double somme = 0;
+		for (int m = 1; m < 50; m++){
+			somme += exp(-D*pow(m*pi/L,2)*Tend) * ((1-pow(-1,m))/(m*pi)) * sin((m*pi*x)/L);
+		}
+		u_n[i] = Text_0 + 2 * (Tin_0 - Text_0) * somme;
+		x += dx;
 	}
 }

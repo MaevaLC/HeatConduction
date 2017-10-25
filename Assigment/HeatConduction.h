@@ -37,3 +37,10 @@ public:
 	DuFort_Frankel(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
 };
+
+class AnalyticalSolution : public HeatConduction{
+public:
+	AnalyticalSolution();
+	AnalyticalSolution(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
+	virtual void solve();
+};

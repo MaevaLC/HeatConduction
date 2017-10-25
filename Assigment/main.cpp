@@ -11,23 +11,34 @@ int main(){
 	double D = 0.1; // coefficient D = 0.1 ft²/h
 	double dx = 0.05; // space step = 0.05;
 	double dt = 0.01; // time step = 0.01;
-	std::ofstream of; // file to store data
+	std::ofstream ofDFF; // file to store data
+	std::ofstream ofAN; // file to store data
 
-	HeatConduction *problem;
-	problem = new DuFort_Frankel(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt);
-	(*problem).solve();
+	HeatConduction *problemDFF;
+	problemDFF = new DuFort_Frankel(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt);
+	(*problemDFF).solve();
 
-	of.open("DuFort_Frankel.txt");
-	of << std::fixed << std::setprecision(2);
+	HeatConduction *problemAN;
+	problemAN = new AnalyticalSolution(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt);
+	(*problemAN).solve();
+
+	ofDFF.open("DuFort_Frankel.txt");
+	ofAN.open("Analytical.txt");
+	ofDFF << std::fixed << std::setprecision(2);
+	ofAN << std::fixed << std::setprecision(2);
 	double x = Xmin;
-	std::vector<double> solution = (*problem).get_u_n();
+	std::vector<double> solutionDFF = (*problemDFF).get_u_n();
+	std::vector<double> solutionAN = (*problemAN).get_u_n();
 	for (int i = 0; i < ((Xmax - Xmin) / dx) + 1; i++){
-		of << x << " " << solution[i] << "\n";
+		ofDFF << x << " " << solutionDFF[i] << "\n";
+		ofAN << x << " " << solutionAN[i] << "\n";
 		x += dx;
 	}
-	of.close();
+	ofDFF.close();
+	ofAN.close();
 
-	delete problem;
+	delete problemDFF;
+	delete problemAN;
 
 	return 0;
 }
