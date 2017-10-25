@@ -44,3 +44,10 @@ public:
 	AnalyticalSolution(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
 };
+
+class Richardson : public HeatConduction{
+public:
+	Richardson();
+	Richardson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
+	virtual void solve();
+};

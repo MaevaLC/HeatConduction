@@ -88,3 +88,29 @@ void AnalyticalSolution::solve(){
 		x += dx;
 	}
 }
+
+Richardson::Richardson() : HeatConduction() {}
+
+Richardson::Richardson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
+
+void Richardson::solve(){
+	/* define n = 0 and n = 1 */
+	for (int i = 0; i < s + 1; i++){
+		u_nminus1[i] = Tin_0;
+		u_n[i] = Tin_0;
+	}
+	u_n[0] = Text_0;
+	u_n[s] = Text_0;
+
+	/* Calculte n = 2 and so on */
+	double r = (D*dt) / (dx*dx);
+	for (int j = 2; j < n + 1; j++){
+		u_nplus1[0] = Text_0;
+		u_nplus1[s] = Text_0;
+		for (int i = 1; i < s; i++){
+			u_nplus1[i] = u_nminus1[i] + 2 * r * (u_n[i + 1] - (2 * u_n[i] + u_n[i - 1]));
+		}
+		u_nminus1 = u_n;
+		u_n = u_nplus1;
+	}
+}
