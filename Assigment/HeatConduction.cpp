@@ -81,7 +81,7 @@ void AnalyticalSolution::solve(){
 	double L = Xmax - Xmin;
 	for (int i = 0; i < s+1; i++){
 		double somme = 0;
-		for (int m = 1; m < 50; m++){
+		for (int m = 1; m < 10; m++){
 			somme += exp(-D*pow(m*pi/L,2)*Tend) * ((1-pow(-1,m))/(m*pi)) * sin((m*pi*x)/L);
 		}
 		u_n[i] = Text_0 + 2 * (Tin_0 - Text_0) * somme;
@@ -112,5 +112,39 @@ void Richardson::solve(){
 		}
 		u_nminus1 = u_n;
 		u_n = u_nplus1;
+	}
+}
+
+Laasonen::Laasonen() : HeatConduction() {}
+
+Laasonen::Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
+
+void Laasonen::solve(){
+	double m;
+	double r = (D*dt) / (dx*dx);
+	std::vector<double> a = std::vector<double>(s + 1);
+	std::vector<double> b = std::vector<double>(s + 1);
+	std::vector<double> c = std::vector<double>(s + 1);
+	 
+	for (int i = 0; i < s + 1; i++){
+		a[i] = -r; // bottom diagonal
+		b[i] = 2*r + 1; // central diagonal
+		c[i] = -r; // upper diagonal
+		u_n[i] = Tin_0;
+	}
+	u_n[0] = Text_0;
+	u_n[s] = Text_0;
+
+	//Forward elimination phase
+	for (int k = 1; k < s; k++){
+		m = a[k] / b[k - 1];
+		b[k] = b[k] - (m*c[k - 1]);
+		u_n[k] = u_n[k] - (m*u_n[k - 1]);
+	}
+
+	//Backward elimination phase
+	u_nplus1[s] = u_n[s] / b[s];
+	for (int k = s-1; k > 0; k--){
+		u_nplus1[k] = (u_n[k] - (c[k] * u_nplus1[k + 1])) / b[k];
 	}
 }

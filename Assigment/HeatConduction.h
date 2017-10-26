@@ -51,3 +51,10 @@ public:
 	Richardson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
 };
+
+class Laasonen : public HeatConduction{
+public:
+	Laasonen();
+	Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
+	virtual void solve();
+};
