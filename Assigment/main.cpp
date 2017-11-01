@@ -46,7 +46,7 @@ int main(){
 	std::vector<double> solutionDFF = (*problemDFF).get_u_n();
 	std::vector<double> solutionAN = (*problemAN).get_u_n();
 	std::vector<double> solutionRI = (*problemRI).get_u_n();
-	std::vector<double> solutionLSI = (*problemLSI).get_u_nplus1();
+	std::vector<double> solutionLSI = (*problemLSI).get_u_n();
 	for (int i = 0; i < ((Xmax - Xmin) / dx) + 1; i++){
 		ofDFF << x << " " << solutionDFF[i] << "\n";
 		ofAN << x << " " << solutionAN[i] << "\n";
