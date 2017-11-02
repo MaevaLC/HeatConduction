@@ -105,8 +105,7 @@ Laasonen::Laasonen() : HeatConduction() {}
 Laasonen::Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
 void Laasonen::solve(){
-	double m;
-	double r = (D*dt) / (dx*dx);
+	double m = 0;
 	std::vector<double> a = std::vector<double>(s-1);
 	std::vector<double> b = std::vector<double>(s-1);
 	std::vector<double> c = std::vector<double>(s-1);
@@ -122,7 +121,6 @@ void Laasonen::solve(){
 	u_n[s] = Text_0;
 	a[0] = 0;
 	c[s-2] = 0;
-
 
 	for (int j = 1; j < n + 1; j++){
 		//Boundaries conditions
@@ -146,5 +144,12 @@ void Laasonen::solve(){
 
 		u_n = u_nplus1;
 		std::fill(u_nplus1.begin(), u_nplus1.end(), 0);
+
+		// we set back correctly the vector b
+		for (int i = 0; i < s - 1; i++){
+			b[i] = 2 * r + 1; // central diagonal
+		}
+
+
 	}
 }

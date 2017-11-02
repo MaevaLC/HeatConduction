@@ -25,6 +25,12 @@ fileRI3 = open("Richardson-0.300000.txt", 'r')
 fileRI4 = open("Richardson-0.400000.txt", 'r')
 fileRI5 = open("Richardson-0.500000.txt", 'r')
 
+fileLA1 = open("Laasonen-0.100000.txt", 'r')
+fileLA2 = open("Laasonen-0.200000.txt", 'r')
+fileLA3 = open("Laasonen-0.300000.txt", 'r')
+fileLA4 = open("Laasonen-0.400000.txt", 'r')
+fileLA5 = open("Laasonen-0.500000.txt", 'r')
+
 dataDFF1 = fileDFF1.readlines()
 dataDFF2 = fileDFF2.readlines()
 dataDFF3 = fileDFF3.readlines()
@@ -42,6 +48,12 @@ dataRI2 = fileRI2.readlines()
 dataRI3 = fileRI3.readlines()
 dataRI4 = fileRI4.readlines()
 dataRI5 = fileRI5.readlines()
+
+dataLA1 = fileLA1.readlines()
+dataLA2 = fileLA2.readlines()
+dataLA3 = fileLA3.readlines()
+dataLA4 = fileLA4.readlines()
+dataLA5 = fileLA5.readlines()
 
 x = []
 
@@ -62,6 +74,12 @@ RI2 = []
 RI3 = []
 RI4 = []
 RI5 = []
+
+LA1 = []
+LA2 = []
+LA3 = []
+LA4 = []
+LA5 = []
 
 i=0
 
@@ -84,6 +102,12 @@ while (i<len(dataDFF1)):
     data_RI4_splited = dataRI4[i].split(" ")
     data_RI5_splited = dataRI5[i].split(" ")
     
+    data_LA1_splited = dataLA1[i].split(" ")
+    data_LA2_splited = dataLA2[i].split(" ")
+    data_LA3_splited = dataLA3[i].split(" ")
+    data_LA4_splited = dataLA4[i].split(" ")
+    data_LA5_splited = dataLA5[i].split(" ")
+    
     x.append(float(data_DFF1_splited[0]))
     
     DFF1.append(float(data_DFF1_splited[1]))
@@ -104,9 +128,15 @@ while (i<len(dataDFF1)):
     RI4.append(float(data_RI4_splited[1]))
     RI5.append(float(data_RI5_splited[1]))
     
+    LA1.append(float(data_LA1_splited[1])) 
+    LA2.append(float(data_LA2_splited[1])) 
+    LA3.append(float(data_LA3_splited[1])) 
+    LA4.append(float(data_LA4_splited[1])) 
+    LA5.append(float(data_LA5_splited[1]))    
+    
     i=i+1
 
-plt.subplot(121)
+plt.subplot(221)
 plt.plot(x, DFF1, 'b', label='approximation')
 plt.plot(x, DFF2, 'b')
 plt.plot(x, DFF3, 'b')
@@ -122,7 +152,7 @@ plt.xlim((0, 1))
 plt.ylim((100, 300))
 plt.legend(loc ='upper center')
 
-plt.subplot(122)
+plt.subplot(222)
 plt.plot(x, RI1, 'b', label='approximation')
 plt.plot(x, RI2, 'b')
 plt.plot(x, RI3, 'b')
@@ -131,6 +161,22 @@ plt.plot(x, RI5, 'b')
 plt.plot(x, AN1, 'r', label='analytical')
 plt.title("Richardson")
 plt.xlim((0, 1))
+plt.legend(loc ='upper center')
+
+plt.subplot(223)
+plt.plot(x, LA1, 'b', label='approximation')
+plt.plot(x, LA2, 'b')
+plt.plot(x, LA3, 'b')
+plt.plot(x, LA4, 'b')
+plt.plot(x, LA5, 'b')
+plt.plot(x, AN1, 'r', label='analytical')
+plt.plot(x, AN2, 'r')
+plt.plot(x, AN3, 'r')
+plt.plot(x, AN4, 'r')
+plt.plot(x, AN5, 'r')
+plt.title("Laas")
+plt.xlim((0, 1))
+plt.ylim((100, 300))
 plt.legend(loc ='upper center')
 
 plt.show()
@@ -152,3 +198,5 @@ fileRI2.close()
 fileRI3.close()
 fileRI4.close()
 fileRI5.close()
+
+fileLA5.close()
