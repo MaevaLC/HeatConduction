@@ -3,12 +3,11 @@
 #include <iomanip>
 #include <sstream>
 
-int main(){
+void assigment(double Tend){
 	double Tin_0 = 100; // initial temperature inside : 100°F
 	double Text_0 = 300; // initial temperature outside : 300°F
 	double Xmin = 0; // position at the left : 0 ft
 	double Xmax = 1; // position at the right : 1 ft
-	double Tend = 0.5; // end time of simulation : 0.5h
 	double D = 0.1; // coefficient D = 0.1 ft²/h
 	double dx = 0.05; // space step = 0.05;
 	double dt = 0.01; // time step = 0.01;
@@ -74,6 +73,11 @@ int main(){
 	delete problemRI;
 	delete problemLSI;
 	delete problemCN;
+}
 
+int main(){
+	for (int i = 1; i < 6; i++){
+		assigment(double(i)/10.0);
+	}
 	return 0;
 }

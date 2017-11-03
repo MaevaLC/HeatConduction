@@ -43,18 +43,18 @@ public:
 	virtual void advance(int i);
 };
 
-class Laasonen : public HeatConduction{
+class ImplicitMethod : public HeatConduction{
+protected:
+	double m;
+	std::vector<double> a;
+	std::vector<double> b;
+	std::vector<double> c;
+	std::vector<double> d;
 public:
-	Laasonen();
-	Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
+	ImplicitMethod();
+	ImplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
-};
-
-class CrankNicholson : public HeatConduction{
-public:
-	CrankNicholson();
-	CrankNicholson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
-	virtual void solve();
+	void ThomasAlgorith();
 };
 
 // sub classes of ExplicitMethod
@@ -71,4 +71,20 @@ public:
 	Richardson();
 	Richardson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void advance(int i);
+};
+
+// sub classes of ImplicitMethod
+
+class Laasonen : public ImplicitMethod{
+public:
+	Laasonen();
+	Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
+	virtual void solve();
+};
+
+class CrankNicholson : public ImplicitMethod{
+public:
+	CrankNicholson();
+	CrankNicholson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
+	virtual void solve();
 };

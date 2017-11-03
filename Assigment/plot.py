@@ -227,6 +227,12 @@ plt.legend(loc ='upper center')
 
 plt.show()
 
+plt.plot(x, CN1, 'b', label='approximation')
+
+plt.show()
+
+
+
 fileDFF1.close()
 fileDFF2.close()
 fileDFF3.close()
