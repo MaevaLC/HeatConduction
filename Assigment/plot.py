@@ -31,6 +31,12 @@ fileLA3 = open("Laasonen-0.300000.txt", 'r')
 fileLA4 = open("Laasonen-0.400000.txt", 'r')
 fileLA5 = open("Laasonen-0.500000.txt", 'r')
 
+fileCN1 = open("CrankNicholson-0.100000.txt", 'r')
+fileCN2 = open("CrankNicholson-0.200000.txt", 'r')
+fileCN3 = open("CrankNicholson-0.300000.txt", 'r')
+fileCN4 = open("CrankNicholson-0.400000.txt", 'r')
+fileCN5 = open("CrankNicholson-0.500000.txt", 'r')
+
 dataDFF1 = fileDFF1.readlines()
 dataDFF2 = fileDFF2.readlines()
 dataDFF3 = fileDFF3.readlines()
@@ -54,6 +60,12 @@ dataLA2 = fileLA2.readlines()
 dataLA3 = fileLA3.readlines()
 dataLA4 = fileLA4.readlines()
 dataLA5 = fileLA5.readlines()
+
+dataCN1 = fileCN1.readlines()
+dataCN2 = fileCN2.readlines()
+dataCN3 = fileCN3.readlines()
+dataCN4 = fileCN4.readlines()
+dataCN5 = fileCN5.readlines()
 
 x = []
 
@@ -80,6 +92,12 @@ LA2 = []
 LA3 = []
 LA4 = []
 LA5 = []
+
+CN1 = []
+CN2 = []
+CN3 = []
+CN4 = []
+CN5 = []
 
 i=0
 
@@ -108,6 +126,12 @@ while (i<len(dataDFF1)):
     data_LA4_splited = dataLA4[i].split(" ")
     data_LA5_splited = dataLA5[i].split(" ")
     
+    data_CN1_splited = dataCN1[i].split(" ")
+    data_CN2_splited = dataCN2[i].split(" ")
+    data_CN3_splited = dataCN3[i].split(" ")
+    data_CN4_splited = dataCN4[i].split(" ")
+    data_CN5_splited = dataCN5[i].split(" ")
+    
     x.append(float(data_DFF1_splited[0]))
     
     DFF1.append(float(data_DFF1_splited[1]))
@@ -132,7 +156,13 @@ while (i<len(dataDFF1)):
     LA2.append(float(data_LA2_splited[1])) 
     LA3.append(float(data_LA3_splited[1])) 
     LA4.append(float(data_LA4_splited[1])) 
-    LA5.append(float(data_LA5_splited[1]))    
+    LA5.append(float(data_LA5_splited[1]))  
+    
+    CN1.append(float(data_CN1_splited[1]))
+    CN2.append(float(data_CN2_splited[1])) 
+    CN3.append(float(data_CN3_splited[1])) 
+    CN4.append(float(data_CN4_splited[1])) 
+    CN5.append(float(data_CN5_splited[1])) 
     
     i=i+1
 
@@ -161,7 +191,7 @@ plt.plot(x, RI5, 'b')
 plt.plot(x, AN1, 'r', label='analytical')
 plt.title("Richardson")
 plt.xlim((0, 1))
-plt.legend(loc ='upper center')
+plt.legend(loc ='upper right')
 
 plt.subplot(223)
 plt.plot(x, LA1, 'b', label='approximation')
@@ -174,7 +204,23 @@ plt.plot(x, AN2, 'r')
 plt.plot(x, AN3, 'r')
 plt.plot(x, AN4, 'r')
 plt.plot(x, AN5, 'r')
-plt.title("Laas")
+plt.title("Laasonen")
+plt.xlim((0, 1))
+plt.ylim((100, 300))
+plt.legend(loc ='upper center')
+
+plt.subplot(224)
+plt.plot(x, CN1, 'b', label='approximation')
+plt.plot(x, CN2, 'b')
+plt.plot(x, CN3, 'b')
+plt.plot(x, CN4, 'b')
+plt.plot(x, CN5, 'b')
+plt.plot(x, AN1, 'r', label='analytical')
+plt.plot(x, AN2, 'r')
+plt.plot(x, AN3, 'r')
+plt.plot(x, AN4, 'r')
+plt.plot(x, AN5, 'r')
+plt.title("CrankNicholson")
 plt.xlim((0, 1))
 plt.ylim((100, 300))
 plt.legend(loc ='upper center')
@@ -199,4 +245,14 @@ fileRI3.close()
 fileRI4.close()
 fileRI5.close()
 
+fileLA1.close()
+fileLA2.close()
+fileLA3.close()
+fileLA4.close()
 fileLA5.close()
+
+fileCN1.close()
+fileCN2.close()
+fileCN3.close()
+fileCN4.close()
+fileCN5.close()
