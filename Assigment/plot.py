@@ -75,6 +75,12 @@ DFF3 = []
 DFF4 = []
 DFF5 = []
 
+eDFF1 = []
+eDFF2 = []
+eDFF3 = []
+eDFF4 = []
+eDFF5 = []
+
 AN1 = []
 AN2 = []
 AN3 = []
@@ -87,17 +93,35 @@ RI3 = []
 RI4 = []
 RI5 = []
 
+eRI1 = []
+eRI2 = []
+eRI3 = []
+eRI4 = []
+eRI5 = []
+
 LA1 = []
 LA2 = []
 LA3 = []
 LA4 = []
 LA5 = []
 
+eLA1 = []
+eLA2 = []
+eLA3 = []
+eLA4 = []
+eLA5 = []
+
 CN1 = []
 CN2 = []
 CN3 = []
 CN4 = []
 CN5 = []
+
+eCN1 = []
+eCN2 = []
+eCN3 = []
+eCN4 = []
+eCN5 = []
 
 i=0
 
@@ -140,6 +164,12 @@ while (i<len(dataDFF1)):
     DFF4.append(float(data_DFF4_splited[1]))
     DFF5.append(float(data_DFF5_splited[1]))
     
+    eDFF1.append(float(data_DFF1_splited[2]))
+    eDFF2.append(float(data_DFF2_splited[2]))
+    eDFF3.append(float(data_DFF3_splited[2]))
+    eDFF4.append(float(data_DFF4_splited[2]))
+    eDFF5.append(float(data_DFF5_splited[2]))
+    
     AN1.append(float(data_AN1_splited[1]))
     AN2.append(float(data_AN2_splited[1]))
     AN3.append(float(data_AN3_splited[1]))
@@ -151,18 +181,36 @@ while (i<len(dataDFF1)):
     RI3.append(float(data_RI3_splited[1]))
     RI4.append(float(data_RI4_splited[1]))
     RI5.append(float(data_RI5_splited[1]))
+
+    eRI1.append(float(data_RI1_splited[2]))
+    eRI2.append(float(data_RI2_splited[2]))
+    eRI3.append(float(data_RI3_splited[2]))
+    eRI4.append(float(data_RI4_splited[2]))
+    eRI5.append(float(data_RI5_splited[2]))
     
     LA1.append(float(data_LA1_splited[1])) 
     LA2.append(float(data_LA2_splited[1])) 
     LA3.append(float(data_LA3_splited[1])) 
     LA4.append(float(data_LA4_splited[1])) 
-    LA5.append(float(data_LA5_splited[1]))  
+    LA5.append(float(data_LA5_splited[1]))
+    
+    eLA1.append(float(data_LA1_splited[2])) 
+    eLA2.append(float(data_LA2_splited[2])) 
+    eLA3.append(float(data_LA3_splited[2])) 
+    eLA4.append(float(data_LA4_splited[2])) 
+    eLA5.append(float(data_LA5_splited[2])) 
     
     CN1.append(float(data_CN1_splited[1]))
     CN2.append(float(data_CN2_splited[1])) 
     CN3.append(float(data_CN3_splited[1])) 
     CN4.append(float(data_CN4_splited[1])) 
     CN5.append(float(data_CN5_splited[1])) 
+    
+    eCN1.append(float(data_CN1_splited[2]))
+    eCN2.append(float(data_CN2_splited[2])) 
+    eCN3.append(float(data_CN3_splited[2])) 
+    eCN4.append(float(data_CN4_splited[2])) 
+    eCN5.append(float(data_CN5_splited[2])) 
     
     i=i+1
 
@@ -177,7 +225,7 @@ plt.plot(x, AN2, 'r')
 plt.plot(x, AN3, 'r')
 plt.plot(x, AN4, 'r')
 plt.plot(x, AN5, 'r')
-plt.title("DuFort_Frankel")
+plt.title("DuFort Frankel")
 plt.xlim((0, 1))
 plt.ylim((100, 300))
 plt.legend(loc ='upper center')
@@ -220,18 +268,57 @@ plt.plot(x, AN2, 'r')
 plt.plot(x, AN3, 'r')
 plt.plot(x, AN4, 'r')
 plt.plot(x, AN5, 'r')
-plt.title("CrankNicholson")
+plt.title("Crank Nicholson")
 plt.xlim((0, 1))
 plt.ylim((100, 300))
 plt.legend(loc ='upper center')
 
 plt.show()
 
-plt.plot(x, CN1, 'b', label='approximation')
+plt.subplot(221)
+plt.plot(x, eDFF1, 'red', label='T = 0.1h')
+plt.plot(x, eDFF2, 'magenta', label='T = 0.2h')
+plt.plot(x, eDFF3, 'green', label='T = 0.3h')
+plt.plot(x, eDFF4, 'blue', label='T = 0.4h')
+plt.plot(x, eDFF5, 'brown', label='T = 0.5h')
+plt.title("DuFort Frankel Error")
+plt.xlim((0, 1))
+plt.ylim((-1, 5))
+plt.legend(loc ='upper center')
+
+plt.subplot(222)
+plt.plot(x, eRI1, 'red', label='T = 0.1h')
+plt.plot(x, eRI2, 'magenta', label='T = 0.2h')
+plt.plot(x, eRI3, 'green', label='T = 0.3h')
+plt.plot(x, eRI4, 'blue', label='T = 0.4h')
+plt.plot(x, eRI5, 'brown', label='T = 0.5h')
+plt.title("Richardson Error")
+plt.xlim((0, 1))
+plt.legend(loc ='lower left')
+
+plt.subplot(223)
+plt.plot(x, eLA1, 'red', label='T = 0.1h')
+plt.plot(x, eLA2, 'magenta', label='T = 0.2h')
+plt.plot(x, eLA3, 'green', label='T = 0.3h')
+plt.plot(x, eLA4, 'blue', label='T = 0.4h')
+plt.plot(x, eLA5, 'brown', label='T = 0.5h')
+plt.title("Laasonen Error")
+plt.xlim((0, 1))
+plt.ylim((-3, 1.5))
+plt.legend(loc ='lower center')
+
+plt.subplot(224)
+plt.plot(x, eCN1, 'red', label='T = 0.1h')
+plt.plot(x, eCN2, 'magenta', label='T = 0.2h')
+plt.plot(x, eCN3, 'green', label='T = 0.3h')
+plt.plot(x, eCN4, 'blue', label='T = 0.4h')
+plt.plot(x, eCN5, 'brown', label='T = 0.5h')
+plt.title("Crank Nicholson Error")
+plt.xlim((0, 1))
+plt.ylim((-0.3, 1))
+plt.legend(loc ='upper center')
 
 plt.show()
-
-
 
 fileDFF1.close()
 fileDFF2.close()

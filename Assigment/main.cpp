@@ -55,11 +55,11 @@ void assigment(double Tend){
 	std::vector<double> solutionLSI = (*problemLSI).get_u_n();
 	std::vector<double> solutionCN = (*problemCN).get_u_n();
 	for (int i = 0; i < ((Xmax - Xmin) / dx) + 1; i++){
-		ofAN << x << " " << solutionAN[i] << "\n";
-		ofDFF << x << " " << solutionDFF[i] << "\n";
-		ofRI << x << " " << solutionRI[i] << "\n";
-		ofLSI << x << " " << solutionLSI[i] << "\n";
-		ofCN << x << " " << solutionCN[i] << "\n";
+		ofAN << x << " " << solutionAN[i] <<  "\n";
+		ofDFF << x << " " << solutionDFF[i] << " " << solutionDFF[i]-solutionAN[i] << "\n";
+		ofRI << x << " " << solutionRI[i] << " " << solutionRI[i]-solutionAN[i] << "\n";
+		ofLSI << x << " " << solutionLSI[i] << " " << solutionLSI[i]-solutionAN[i] << "\n";
+		ofCN << x << " " << solutionCN[i] << " " << solutionCN[i]-solutionAN[i] << "\n";
 		x += dx;
 	}
 	ofAN.close();

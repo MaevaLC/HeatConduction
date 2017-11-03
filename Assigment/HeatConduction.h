@@ -20,7 +20,6 @@ protected:
 	std::vector<double> u_nminus1; // solution values vector n-1
 	
 public:
-	HeatConduction();
 	HeatConduction(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
 	std::vector<double> get_u_n() const;
@@ -30,14 +29,12 @@ public:
 
 class AnalyticalSolution : public HeatConduction{
 public:
-	AnalyticalSolution();
 	AnalyticalSolution(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
 };
 
 class ExplicitMethod : public HeatConduction{
 public:
-	ExplicitMethod();
 	ExplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
 	virtual void advance(int i);
@@ -51,7 +48,6 @@ protected:
 	std::vector<double> c;
 	std::vector<double> d;
 public:
-	ImplicitMethod();
 	ImplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
 	void ThomasAlgorith();
@@ -61,14 +57,12 @@ public:
 
 class DuFort_Frankel : public ExplicitMethod{
 public:
-	DuFort_Frankel();
 	DuFort_Frankel(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void advance(int i);
 };
 
 class Richardson : public ExplicitMethod{
 public:
-	Richardson();
 	Richardson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void advance(int i);
 };
@@ -77,14 +71,12 @@ public:
 
 class Laasonen : public ImplicitMethod{
 public:
-	Laasonen();
 	Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
 };
 
 class CrankNicholson : public ImplicitMethod{
 public:
-	CrankNicholson();
 	CrankNicholson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();
 };

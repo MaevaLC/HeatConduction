@@ -5,8 +5,6 @@ const double pi = atan(1) * 4;
 
 // base class
 
-HeatConduction::HeatConduction() {}
-
 HeatConduction::HeatConduction(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt){
 	this->Tin_0 = Tin_0;
 	this->Text_0 = Text_0;
@@ -18,8 +16,8 @@ HeatConduction::HeatConduction(double Tin_0, double Text_0, double Xmin, double 
 	this->dt = dt;
 
 	r = (D*dt) / (dx*dx);
-	n = Tend / dt;
-	s = (Xmax - Xmin) / dx;
+	n = int(Tend / dt);
+	s = int((Xmax - Xmin) / dx);
 
 	u_nplus1 = std::vector<double>(s+1);
 	u_n = std::vector<double>(s+1);
@@ -33,8 +31,6 @@ std::vector<double> HeatConduction::get_u_n() const {
 }
 
 // sub classes of HeatConduction
-
-AnalyticalSolution::AnalyticalSolution() : HeatConduction() {}
 
 AnalyticalSolution::AnalyticalSolution(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
@@ -50,8 +46,6 @@ void AnalyticalSolution::solve(){
 		x += dx;
 	}
 }
-
-ExplicitMethod::ExplicitMethod() : HeatConduction() {}
 
 ExplicitMethod::ExplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
@@ -77,8 +71,6 @@ void ExplicitMethod::solve(){
 		u_n = u_nplus1;
 	}
 }
-
-ImplicitMethod::ImplicitMethod() : HeatConduction() {}
 
 ImplicitMethod::ImplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {
 	m = 0;
@@ -117,15 +109,11 @@ void ImplicitMethod::ThomasAlgorith() {
 
 // sub classes of ExplicitMethod
 
-DuFort_Frankel::DuFort_Frankel() : ExplicitMethod() {}
-
 DuFort_Frankel::DuFort_Frankel(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : ExplicitMethod(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
 void DuFort_Frankel::advance(int i){	
 	u_nplus1[i] = (u_nminus1[i] + 2*r*(u_n[i+1] - u_nminus1[i] + u_n[i-1])) /  (1 + 2*r);
 }
-
-Richardson::Richardson() : ExplicitMethod() {}
 
 Richardson::Richardson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : ExplicitMethod(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
@@ -134,8 +122,6 @@ void Richardson::advance(int i){
 }
 
 // sub classes of ImplicitMethod
-
-Laasonen::Laasonen() : ImplicitMethod() {}
 
 Laasonen::Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : ImplicitMethod(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
@@ -163,8 +149,6 @@ void Laasonen::solve(){
 		}
 	}
 }
-
-CrankNicholson::CrankNicholson() : ImplicitMethod() {}
 
 CrankNicholson::CrankNicholson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : ImplicitMethod(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
