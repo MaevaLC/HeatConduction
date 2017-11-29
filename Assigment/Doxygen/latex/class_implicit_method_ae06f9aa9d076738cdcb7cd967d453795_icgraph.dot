@@ -1,0 +1,11 @@
+digraph "ImplicitMethod::ThomasAlgorith"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node5 [label="ImplicitMethod::ThomasAlgorith",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Laasonen::solve",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_laasonen.html#a53cf5a72691175df0b3b6bdcbfee8c9b",tooltip="Abstract solve. "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="CrankNicholson::solve",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_crank_nicholson.html#a2846912cccce367888c37bf0e58f1cb1",tooltip="Abstract solve. "];
+}

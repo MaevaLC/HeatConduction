@@ -1,0 +1,173 @@
+\section{Heat\+Conduction Class Reference}
+\label{class_heat_conduction}\index{Heat\+Conduction@{Heat\+Conduction}}
+
+
+Base abstract Class which include all the parameters to solve the problem.  
+
+
+
+
+{\ttfamily \#include $<$Heat\+Conduction.\+h$>$}
+
+Inheritance diagram for Heat\+Conduction\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.776860cm]{class_heat_conduction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Heat\+Conduction} (double \textbf{ Tin\+\_\+0}, double \textbf{ Text\+\_\+0}, double \textbf{ Xmin}, double \textbf{ Xmax}, double \textbf{ Tend}, double \textbf{ D}, double \textbf{ dx}, double \textbf{ dt})
+\begin{DoxyCompactList}\small\item\em Constructor of the \doxyref{Heat\+Conduction}{p.}{class_heat_conduction} class. \end{DoxyCompactList}\item 
+virtual void \textbf{ solve} ()
+\begin{DoxyCompactList}\small\item\em Abstract solve. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \textbf{ get\+\_\+u\+\_\+n} () const
+\begin{DoxyCompactList}\small\item\em Get method of the attribute u\+\_\+n. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_heat_conduction_a2487010bf67582643ff59c0c5167725e}} 
+double \textbf{ Tin\+\_\+0}
+\begin{DoxyCompactList}\small\item\em initial condition Temperature \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_aeb50fb3189fd6545f765ef73c9be7889}} 
+double \textbf{ Text\+\_\+0}
+\begin{DoxyCompactList}\small\item\em initial condition Temperature \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_a6ccf374e13ab91b2403db617c9e7a8f0}} 
+double \textbf{ Xmin}
+\begin{DoxyCompactList}\small\item\em initial condition Position \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_a187dd05134300536dd9b5418e2957e9a}} 
+double \textbf{ Xmax}
+\begin{DoxyCompactList}\small\item\em initial condition Position \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_ab1d00caf79f4c04b420189eaf7c666e1}} 
+double \textbf{ Tend}
+\begin{DoxyCompactList}\small\item\em initial condition Time \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_a197d8aa3aa8619edaa640c243bdfc793}} 
+double \textbf{ D}
+\begin{DoxyCompactList}\small\item\em initial condition D \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_a208bf1f475147b07a1f7d28533d78d9c}} 
+double \textbf{ dx}
+\begin{DoxyCompactList}\small\item\em space step \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_a7a7d5f6631039781c80b8c0c60e540e6}} 
+double \textbf{ dt}
+\begin{DoxyCompactList}\small\item\em time step \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_ada703cd81a60d17a134b15499bbbef98}} 
+int \textbf{ n}
+\begin{DoxyCompactList}\small\item\em number of time steps \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_ad380b438b1ab0f6988342ac4023854da}} 
+int \textbf{ s}
+\begin{DoxyCompactList}\small\item\em number of space steps \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_ae152528bd4b7d0841854b32d037ace72}} 
+double \textbf{ r}
+\begin{DoxyCompactList}\small\item\em calculation made once instead of multiple time \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_a6ad0488a3d4e3c9190b2abb3de8ccd2e}} 
+std\+::vector$<$ double $>$ \textbf{ u\+\_\+nplus1}
+\begin{DoxyCompactList}\small\item\em solution values vector n+1 \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_ac2e557e6d0c482dd49f78369c8d9f708}} 
+std\+::vector$<$ double $>$ \textbf{ u\+\_\+n}
+\begin{DoxyCompactList}\small\item\em solution values vector n \end{DoxyCompactList}\item 
+\mbox{\label{class_heat_conduction_ae5bf8bf1144632fad72a415023ca4461}} 
+std\+::vector$<$ double $>$ \textbf{ u\+\_\+nminus1}
+\begin{DoxyCompactList}\small\item\em solution values vector n-\/1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base abstract Class which include all the parameters to solve the problem. 
+
+Heat Conduction is an object, in which attributes is a paramaters of the problem, and also have vectors which will be used to store the solution. It includes an abstract method solve, which will call the solve methods corresponding to the type of scheme the user need. 
+
+Definition at line 27 of file Heat\+Conduction.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_heat_conduction_ab81631c27726b7048e49ac0b8fba9b23}} 
+\index{Heat\+Conduction@{Heat\+Conduction}!Heat\+Conduction@{Heat\+Conduction}}
+\index{Heat\+Conduction@{Heat\+Conduction}!Heat\+Conduction@{Heat\+Conduction}}
+\subsubsection{Heat\+Conduction()}
+{\footnotesize\ttfamily Heat\+Conduction\+::\+Heat\+Conduction (\begin{DoxyParamCaption}\item[{double}]{Tin\+\_\+0,  }\item[{double}]{Text\+\_\+0,  }\item[{double}]{Xmin,  }\item[{double}]{Xmax,  }\item[{double}]{Tend,  }\item[{double}]{D,  }\item[{double}]{dx,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Constructor of the \doxyref{Heat\+Conduction}{p.}{class_heat_conduction} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Tin\+\_\+0} & -\/ initial condition Temperature inside \\
+\hline
+{\em Text\+\_\+0} & -\/ initial condition Temperature outside \\
+\hline
+{\em Xmin} & -\/ the X position far left \\
+\hline
+{\em Xmax} & -\/ the X position far right \\
+\hline
+{\em Tend} & -\/ the end time of the simulation \\
+\hline
+{\em D} & -\/ the difusivity of the wall \\
+\hline
+{\em dx} & -\/ the space step \\
+\hline
+{\em dt} & -\/ the time step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Heat\+Conduction.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_heat_conduction_a97d3e5b07a0de19da5b1879208ae6bb3}} 
+\index{Heat\+Conduction@{Heat\+Conduction}!get\+\_\+u\+\_\+n@{get\+\_\+u\+\_\+n}}
+\index{get\+\_\+u\+\_\+n@{get\+\_\+u\+\_\+n}!Heat\+Conduction@{Heat\+Conduction}}
+\subsubsection{get\+\_\+u\+\_\+n()}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Heat\+Conduction\+::get\+\_\+u\+\_\+n (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get method of the attribute u\+\_\+n. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+u\+\_\+n -\/ a vector attribute of the mother Class 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file Heat\+Conduction.\+cpp.
+
+\mbox{\label{class_heat_conduction_ac176ea1a94c2fdb0da017b987ea22d1c}} 
+\index{Heat\+Conduction@{Heat\+Conduction}!solve@{solve}}
+\index{solve@{solve}!Heat\+Conduction@{Heat\+Conduction}}
+\subsubsection{solve()}
+{\footnotesize\ttfamily void Heat\+Conduction\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Abstract solve. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void -\/ the result is stored in the vector u\+\_\+n of the mother Class 
+\end{DoxyReturn}
+
+
+Reimplemented in \textbf{ Crank\+Nicholson} \doxyref{}{p.}{class_crank_nicholson_a2846912cccce367888c37bf0e58f1cb1}, \textbf{ Laasonen} \doxyref{}{p.}{class_laasonen_a53cf5a72691175df0b3b6bdcbfee8c9b}, \textbf{ Implicit\+Method} \doxyref{}{p.}{class_implicit_method_ae06909ac3cde1ae9fb216501c852e22c}, \textbf{ Explicit\+Method} \doxyref{}{p.}{class_explicit_method_a096efa29c4315794c60182e31c54a45e}, and \textbf{ Analytical\+Solution} \doxyref{}{p.}{class_analytical_solution_afd1d8d955abbe0c5b7763544faad8dd2}.
+
+
+
+Definition at line 64 of file Heat\+Conduction.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Heat\+Conduction.\+h}\item 
+\textbf{ Heat\+Conduction.\+cpp}\end{DoxyCompactItemize}

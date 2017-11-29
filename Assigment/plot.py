@@ -37,6 +37,11 @@ fileCN3 = open("CrankNicholson-0.300000.txt", 'r')
 fileCN4 = open("CrankNicholson-0.400000.txt", 'r')
 fileCN5 = open("CrankNicholson-0.500000.txt", 'r')
 
+filedtLA1 = open("dt_Laasonen-0.010000.txt", 'r')
+filedtLA2 = open("dt_Laasonen-0.025000.txt", 'r')
+filedtLA3 = open("dt_Laasonen-0.050000.txt", 'r')
+filedtLA4 = open("dt_Laasonen-0.100000.txt", 'r')
+
 dataDFF1 = fileDFF1.readlines()
 dataDFF2 = fileDFF2.readlines()
 dataDFF3 = fileDFF3.readlines()
@@ -66,6 +71,11 @@ dataCN2 = fileCN2.readlines()
 dataCN3 = fileCN3.readlines()
 dataCN4 = fileCN4.readlines()
 dataCN5 = fileCN5.readlines()
+
+datadtLA1 = filedtLA1.readlines()
+datadtLA2 = filedtLA2.readlines()
+datadtLA3 = filedtLA3.readlines()
+datadtLA4 = filedtLA4.readlines()
 
 x = []
 
@@ -123,6 +133,17 @@ eCN3 = []
 eCN4 = []
 eCN5 = []
 
+dtLA1 = []
+dtLA2 = []
+dtLA3 = []
+dtLA4 = []
+
+dteLA1 = []
+dteLA2 = []
+dteLA3 = []
+dteLA4 = []
+dteLA5 = []
+
 i=0
 
 while (i<len(dataDFF1)):
@@ -155,6 +176,11 @@ while (i<len(dataDFF1)):
     data_CN3_splited = dataCN3[i].split(" ")
     data_CN4_splited = dataCN4[i].split(" ")
     data_CN5_splited = dataCN5[i].split(" ")
+    
+    data_dtLA1_splited = datadtLA1[i].split(" ")
+    data_dtLA2_splited = datadtLA2[i].split(" ")
+    data_dtLA3_splited = datadtLA3[i].split(" ")
+    data_dtLA4_splited = datadtLA4[i].split(" ")
     
     x.append(float(data_DFF1_splited[0]))
     
@@ -211,6 +237,16 @@ while (i<len(dataDFF1)):
     eCN3.append(float(data_CN3_splited[2])) 
     eCN4.append(float(data_CN4_splited[2])) 
     eCN5.append(float(data_CN5_splited[2])) 
+    
+    dtLA1.append(float(data_dtLA1_splited[1])) 
+    dtLA2.append(float(data_dtLA2_splited[1])) 
+    dtLA3.append(float(data_dtLA3_splited[1])) 
+    dtLA4.append(float(data_dtLA4_splited[1])) 
+    
+    dteLA1.append(float(data_dtLA1_splited[2])) 
+    dteLA2.append(float(data_dtLA2_splited[2])) 
+    dteLA3.append(float(data_dtLA3_splited[2])) 
+    dteLA4.append(float(data_dtLA4_splited[2])) 
     
     i=i+1
 
@@ -320,6 +356,28 @@ plt.legend(loc ='upper center')
 
 plt.show()
 
+plt.subplot(211)
+plt.plot(x, dtLA1, 'red', label='dt = 0.01')
+plt.plot(x, dtLA2, 'magenta', label='dt = 0.025')
+plt.plot(x, dtLA3, 'green', label='dt = 0.05')
+plt.plot(x, dtLA4, 'blue', label='dt = 0.1')
+plt.title("Laasonen")
+#plt.xlim((0, 1))
+#plt.ylim((-3, 1.5))
+plt.legend(loc ='upper center')
+
+plt.subplot(212)
+plt.plot(x, dteLA1, 'red', label='dt = 0.01')
+plt.plot(x, dteLA2, 'magenta', label='dt = 0.025')
+plt.plot(x, dteLA3, 'green', label='dt = 0.05')
+plt.plot(x, dteLA4, 'blue', label='dt = 0.1')
+plt.title("Laasonen Error")
+#plt.xlim((0, 1))
+#plt.ylim((-0.3, 1))
+plt.legend(loc ='lower center')
+
+plt.show()
+
 fileDFF1.close()
 fileDFF2.close()
 fileDFF3.close()
@@ -349,3 +407,8 @@ fileCN2.close()
 fileCN3.close()
 fileCN4.close()
 fileCN5.close()
+
+filedtLA1.close()
+filedtLA2.close()
+filedtLA3.close()
+filedtLA4.close()

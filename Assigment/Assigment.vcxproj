@@ -47,6 +47,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <Profile>true</Profile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -66,9 +67,11 @@
   <ItemGroup>
     <ClCompile Include="HeatConduction.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Norms.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeatConduction.h" />
+    <ClInclude Include="Norms.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

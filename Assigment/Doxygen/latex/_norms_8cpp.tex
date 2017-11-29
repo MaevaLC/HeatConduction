@@ -1,0 +1,105 @@
+\section{Norms.\+cpp File Reference}
+\label{_norms_8cpp}\index{Norms.\+cpp@{Norms.\+cpp}}
+
+
+Functions to calculates norms.  
+
+
+{\ttfamily \#include \char`\"{}Norms.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \textbf{ norm\+\_\+one} (std\+::vector$<$ double $>$ solution)
+\begin{DoxyCompactList}\small\item\em Function to calculate the first norm. \end{DoxyCompactList}\item 
+double \textbf{ norm\+\_\+two} (std\+::vector$<$ double $>$ solution)
+\begin{DoxyCompactList}\small\item\em Function to calculate the Euclidean norm. \end{DoxyCompactList}\item 
+double \textbf{ norm\+\_\+uniform} (std\+::vector$<$ double $>$ solution)
+\begin{DoxyCompactList}\small\item\em Function to calculate the Infinite norm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions to calculates norms. 
+
+\begin{DoxyAuthor}{Author}
+M Le Clec\textquotesingle{}h 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+05 December 2017
+\end{DoxyDate}
+There are 3 norms which can be calculated \+:
+\begin{DoxyItemize}
+\item The norm one
+\item The norm two
+\item The uniform norm 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\mbox{\label{_norms_8cpp_a8a5dd7ae3578ecdb533ae37b7dd00086}} 
+\index{Norms.\+cpp@{Norms.\+cpp}!norm\+\_\+one@{norm\+\_\+one}}
+\index{norm\+\_\+one@{norm\+\_\+one}!Norms.\+cpp@{Norms.\+cpp}}
+\subsubsection{norm\+\_\+one()}
+{\footnotesize\ttfamily norm\+\_\+one (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{solution }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the first norm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solution} & Vector object on which we need to calculate the norm one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum The result of the calculation. 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file Norms.\+cpp.
+
+\mbox{\label{_norms_8cpp_acde0d182617c91cb757a10b1bb2281f1}} 
+\index{Norms.\+cpp@{Norms.\+cpp}!norm\+\_\+two@{norm\+\_\+two}}
+\index{norm\+\_\+two@{norm\+\_\+two}!Norms.\+cpp@{Norms.\+cpp}}
+\subsubsection{norm\+\_\+two()}
+{\footnotesize\ttfamily norm\+\_\+two (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{solution }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the Euclidean norm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solution} & Vector object on which we need to calculate the second one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum The result of the calculation. 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Norms.\+cpp.
+
+\mbox{\label{_norms_8cpp_a87427a1c301886f335fd8485e638f9e2}} 
+\index{Norms.\+cpp@{Norms.\+cpp}!norm\+\_\+uniform@{norm\+\_\+uniform}}
+\index{norm\+\_\+uniform@{norm\+\_\+uniform}!Norms.\+cpp@{Norms.\+cpp}}
+\subsubsection{norm\+\_\+uniform()}
+{\footnotesize\ttfamily norm\+\_\+uniform (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{solution }\end{DoxyParamCaption})}
+
+
+
+Function to calculate the Infinite norm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solution} & Vector object on which we need to calculate the uniform one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum The result of the calculation. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Norms.\+cpp.
+

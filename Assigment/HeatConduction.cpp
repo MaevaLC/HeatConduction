@@ -1,10 +1,40 @@
+/**
+* \file      HeatConduction.cpp
+* \author    M Le Clec'h
+* \version   1.0
+* \date      05 December 2017
+* \brief     Different objects to resolve an Heat Conduction problem.
+*
+* \details   There are 4 schemes which can be use :
+*              - The DuFort-Frankel scheme
+*              - The Richardson scheme
+*              - The Laasonen scheme
+*              - The Crank-Nicholson scheme
+*			It can also provide the analytical solution.
+*/
+
 #include "HeatConduction.h"
 #include <cmath>
 
 const double pi = atan(1) * 4;
 
-// base class
+//
+// ...... BASE CLASS ......
+//
 
+/**
+* \fn HeatConduction::HeatConduction(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt)
+* \brief Constructor of the HeatConduction class
+*
+* \param Tin_0 - initial condition Temperature inside
+* \param Text_0 - initial condition Temperature outside
+* \param Xmin - the X position far left
+* \param Xmax - the X position far right
+* \param Tend - the end time of the simulation
+* \param D - the difusivity of the wall
+* \param dx - the space step
+* \param dt - the time step
+*/
 HeatConduction::HeatConduction(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt){
 	this->Tin_0 = Tin_0;
 	this->Text_0 = Text_0;
@@ -24,16 +54,52 @@ HeatConduction::HeatConduction(double Tin_0, double Text_0, double Xmin, double 
 	u_nminus1 = std::vector<double>(s+1);
 }
 
+/**
+* \fn void HeatConduction::solve()
+* \brief Abstract solve
+*
+* \param none
+* \return void - the result is stored in the vector u_n of the mother Class
+*/
 void HeatConduction::solve() {}
 
+/**
+* \fn std::vector<double> HeatConduction::get_u_n() const
+* \brief Get method of the attribute u_n
+*
+* \param none
+* \return u_n - a vector attribute of the mother Class
+*/
 std::vector<double> HeatConduction::get_u_n() const {
 	return u_n;
 }
 
-// sub classes of HeatConduction
+//
+// ...... SUB CLASS ......
+//
 
+/**
+* \fn AnalyticalSolution::AnalyticalSolution(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt)
+* \brief Constructor of the AnalyticalSolution class
+*
+* \param Tin_0 - initial condition Temperature inside
+* \param Text_0 - initial condition Temperature outside
+* \param Xmin - the X position far left
+* \param Xmax - the X position far right
+* \param Tend - the end time of the simulation
+* \param D - the difusivity of the wall
+* \param dx - the space step
+* \param dt - the time step
+*/
 AnalyticalSolution::AnalyticalSolution(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
+/**
+* \fn void AnalyticalSolution::solve()
+* \brief Solve with the analytical solution
+*
+* \param none
+* \return void - the result is stored in the vector u_n of the mother Class
+*/
 void AnalyticalSolution::solve(){
 	double x = Xmin;
 	double L = Xmax - Xmin;
@@ -47,12 +113,39 @@ void AnalyticalSolution::solve(){
 	}
 }
 
+/**
+* \fn ExplicitMethod::ExplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt)
+* \brief Constructor of the ExplicitMethod class
+*
+* \param Tin_0 - initial condition Temperature inside
+* \param Text_0 - initial condition Temperature outside
+* \param Xmin - the X position far left
+* \param Xmax - the X position far right
+* \param Tend - the end time of the simulation
+* \param D - the difusivity of the wall
+* \param dx - the space step
+* \param dt - the time step
+*/
 ExplicitMethod::ExplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
-void ExplicitMethod::advance(int i) {}
+/**
+* \fn ExplicitMethod::advance(int i)
+* \brief Abstract method implemented in the sub sub classes
+*
+* \param i - the space iteration at which is the solve method
+* \return void - the result is stored in the vector u_nplus1 of the mother Class
+*/
+void ExplicitMethod::advance(int i){}
 
+/**
+* \fn void ExplicitMethod::solve()
+* \brief Solve regroup the common part of the Explicit Method
+*
+* \param none
+* \return void - the result is stored in the vector u_n of the mother Class
+*/
 void ExplicitMethod::solve(){
-	/* define n = -1 and n = 0 */
+	/* initialisation n = -1 and n = 0 */
 	for (int i = 0; i < s + 1; i++){
 		u_nminus1[i] = Tin_0;
 		u_n[i] = Tin_0;
@@ -62,16 +155,29 @@ void ExplicitMethod::solve(){
 
 	/* Calculte n = 1 and so on */
 	for (int j = 1; j < n + 1; j++){
-		u_nplus1[0] = Text_0;
-		u_nplus1[s] = Text_0;
+		u_nplus1[0] = Text_0; //boundaries conditions
+		u_nplus1[s] = Text_0; //boundaries conditions
 		for (int i = 1; i < s; i++){
-			advance(i);
+			advance(i); // u_nplus1 is define accrding the scheme used
 		}
 		u_nminus1 = u_n;
 		u_n = u_nplus1;
 	}
 }
 
+/**
+* \fn ImplicitMethod::ImplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt)
+* \brief Constructor of the ImplicitMethod class
+*
+* \param Tin_0 - initial condition Temperature inside
+* \param Text_0 - initial condition Temperature outside
+* \param Xmin - the X position far left
+* \param Xmax - the X position far right
+* \param Tend - the end time of the simulation
+* \param D - the difusivity of the wall
+* \param dx - the space step
+* \param dt - the time step
+*/
 ImplicitMethod::ImplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : HeatConduction(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {
 	m = 0;
 	a = std::vector<double>(s - 1);
@@ -79,6 +185,7 @@ ImplicitMethod::ImplicitMethod(double Tin_0, double Text_0, double Xmin, double 
 	c = std::vector<double>(s - 1);
 	d = std::vector<double>(s - 1);
 
+	// initialisation of u_n for n = 0
 	for (int i = 1; i < s; i++){
 		u_n[i] = Tin_0;
 	}
@@ -86,8 +193,22 @@ ImplicitMethod::ImplicitMethod(double Tin_0, double Text_0, double Xmin, double 
 	u_n[s] = Text_0;
 }
 
+/**
+* \fn void ImplicitMethod::solve
+* \brief Abstract solve
+*
+* \param none
+* \return void - the result is stored in the vector u_n of the mother Class
+*/
 void ImplicitMethod::solve() {}
 
+/**
+* \fn void ImplicitMethod::ThomasAlgorith()
+* \brief The Thomas Algorith, to solve Tridiagonal matrix problem
+*
+* \param none
+* \return void - the result is stored in the vector u_n of the mother Class
+*/
 void ImplicitMethod::ThomasAlgorith() {
 	//Forward elimination phase
 	for (int k = 1; k < s - 1; k++){
@@ -107,24 +228,84 @@ void ImplicitMethod::ThomasAlgorith() {
 	u_n = u_nplus1;
 }
 
-// sub classes of ExplicitMethod
+//
+// ...... SUB SUB CLASS ......
+//
 
+/**
+* \fn DuFort_Frankel::DuFort_Frankel(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt)
+* \brief Constructor of the DuFort_Frankel class
+*
+* \param Tin_0 - initial condition Temperature inside
+* \param Text_0 - initial condition Temperature outside
+* \param Xmin - the X position far left
+* \param Xmax - the X position far right
+* \param Tend - the end time of the simulation
+* \param D - the difusivity of the wall
+* \param dx - the space step
+* \param dt - the time step
+*/
 DuFort_Frankel::DuFort_Frankel(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : ExplicitMethod(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
+/**
+* \fn DuFort_Frankel::advance(int i)
+* \brief Calcul of un_plus1 according to DuFort_Frankel scheme
+*
+* \param i - the space iteration at which is the solve method
+* \return void - the result is stored in the vector u_nplus1 of the mother Class
+*/
 void DuFort_Frankel::advance(int i){	
 	u_nplus1[i] = (u_nminus1[i] + 2*r*(u_n[i+1] - u_nminus1[i] + u_n[i-1])) /  (1 + 2*r);
 }
 
+/**
+* \fn Richardson::Richardson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt)
+* \brief Constructor of the Richardson class
+*
+* \param Tin_0 - initial condition Temperature inside
+* \param Text_0 - initial condition Temperature outside
+* \param Xmin - the X position far left
+* \param Xmax - the X position far right
+* \param Tend - the end time of the simulation
+* \param D - the difusivity of the wall
+* \param dx - the space step
+* \param dt - the time step
+*/
 Richardson::Richardson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : ExplicitMethod(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
+/**
+* \fn void Richardson::advance(int i)
+* \brief Calcul of un_plus1 according to Richardson scheme
+*
+* \param i - the space iteration at which is the solve method
+* \return void - the result is stored in the vector u_nplus1 of the mother Class
+*/
 void Richardson::advance(int i){
 	u_nplus1[i] = u_nminus1[i] + 2 * r * (u_n[i + 1] - (2 * u_n[i] + u_n[i - 1]));
 }
 
-// sub classes of ImplicitMethod
-
+/**
+* \fn Laasonen::Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt)
+* \brief Constructor of the Laasonen class
+*
+* \param Tin_0 - initial condition Temperature inside
+* \param Text_0 - initial condition Temperature outside
+* \param Xmin - the X position far left
+* \param Xmax - the X position far right
+* \param Tend - the end time of the simulation
+* \param D - the difusivity of the wall
+* \param dx - the space step
+* \param dt - the time step
+*/
 Laasonen::Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : ImplicitMethod(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
+/**
+* \fn void Laasonen::solve()
+* \brief Solve method. The matrix abc and the vector d are define after the Laasonen scheme
+*
+* \param none
+* \return void - the result is stored in the vector u_n of the mother Class
+*/
 void Laasonen::solve(){ 
 	for (int i = 0; i < s-1; i++){
 		a[i] = -r; // bottom diagonal
@@ -150,8 +331,28 @@ void Laasonen::solve(){
 	}
 }
 
+/**
+* \fn CrankNicholson::CrankNicholson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt)
+* \brief Constructor of the Laasonen class
+*
+* \param Tin_0 - initial condition Temperature inside
+* \param Text_0 - initial condition Temperature outside
+* \param Xmin - the X position far left
+* \param Xmax - the X position far right
+* \param Tend - the end time of the simulation
+* \param D - the difusivity of the wall
+* \param dx - the space step
+* \param dt - the time step
+*/
 CrankNicholson::CrankNicholson(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt) : ImplicitMethod(Tin_0, Text_0, Xmin, Xmax, Tend, D, dx, dt) {}
 
+/**
+* \fn void CrankNicholson::solve()
+* \brief Solve method. The matrix abc and the vector d are define after the Crank-Nicholson scheme
+*
+* \param none
+* \return void - the result is stored in the vector u_n of the mother Class
+*/
 void CrankNicholson::solve(){
 	for (int i = 0; i < s - 1; i++){
 		a[i] = -r/2; // bottom diagonal

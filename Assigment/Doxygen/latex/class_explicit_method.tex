@@ -1,0 +1,133 @@
+\section{Explicit\+Method Class Reference}
+\label{class_explicit_method}\index{Explicit\+Method@{Explicit\+Method}}
+
+
+Sub Abstract Class used to calculate the Explicit scheme.  
+
+
+
+
+{\ttfamily \#include $<$Heat\+Conduction.\+h$>$}
+
+Inheritance diagram for Explicit\+Method\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_explicit_method}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Explicit\+Method} (double \textbf{ Tin\+\_\+0}, double \textbf{ Text\+\_\+0}, double \textbf{ Xmin}, double \textbf{ Xmax}, double \textbf{ Tend}, double \textbf{ D}, double \textbf{ dx}, double \textbf{ dt})
+\begin{DoxyCompactList}\small\item\em Constructor of the \doxyref{Explicit\+Method}{p.}{class_explicit_method} class. \end{DoxyCompactList}\item 
+virtual void \textbf{ solve} ()
+\begin{DoxyCompactList}\small\item\em Solve regroup the common part of the Explicit Method. \end{DoxyCompactList}\item 
+virtual void \textbf{ advance} (int i)
+\begin{DoxyCompactList}\small\item\em Abstract method implemented in the sub sub classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Sub Abstract Class used to calculate the Explicit scheme. 
+
+\doxyref{Explicit\+Method}{p.}{class_explicit_method} is a sub class of \doxyref{Heat\+Conduction}{p.}{class_heat_conduction}. Both explicit method share the same solve method, which is implemented in this class. The advance method is an abstract method implemented in the sub sub classes. 
+
+Definition at line 70 of file Heat\+Conduction.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_explicit_method_aa88329525eb6c640c7634792c933d3ea}} 
+\index{Explicit\+Method@{Explicit\+Method}!Explicit\+Method@{Explicit\+Method}}
+\index{Explicit\+Method@{Explicit\+Method}!Explicit\+Method@{Explicit\+Method}}
+\subsubsection{Explicit\+Method()}
+{\footnotesize\ttfamily Explicit\+Method\+::\+Explicit\+Method (\begin{DoxyParamCaption}\item[{double}]{Tin\+\_\+0,  }\item[{double}]{Text\+\_\+0,  }\item[{double}]{Xmin,  }\item[{double}]{Xmax,  }\item[{double}]{Tend,  }\item[{double}]{D,  }\item[{double}]{dx,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+Constructor of the \doxyref{Explicit\+Method}{p.}{class_explicit_method} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Tin\+\_\+0} & -\/ initial condition Temperature inside \\
+\hline
+{\em Text\+\_\+0} & -\/ initial condition Temperature outside \\
+\hline
+{\em Xmin} & -\/ the X position far left \\
+\hline
+{\em Xmax} & -\/ the X position far right \\
+\hline
+{\em Tend} & -\/ the end time of the simulation \\
+\hline
+{\em D} & -\/ the difusivity of the wall \\
+\hline
+{\em dx} & -\/ the space step \\
+\hline
+{\em dt} & -\/ the time step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file Heat\+Conduction.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_explicit_method_afdff9dbaacf767cdfe295103f3de41ef}} 
+\index{Explicit\+Method@{Explicit\+Method}!advance@{advance}}
+\index{advance@{advance}!Explicit\+Method@{Explicit\+Method}}
+\subsubsection{advance()}
+{\footnotesize\ttfamily void Explicit\+Method\+::advance (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Abstract method implemented in the sub sub classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ the space iteration at which is the solve method \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void -\/ the result is stored in the vector u\+\_\+nplus1 of the mother Class 
+\end{DoxyReturn}
+
+
+Reimplemented in \textbf{ Richardson} \doxyref{}{p.}{class_richardson_a9be0699e321b038d9361c209b3d542cb}, and \textbf{ Du\+Fort\+\_\+\+Frankel} \doxyref{}{p.}{class_du_fort___frankel_ae8a6c6c56b2a4ce3bf7f80075a2cf680}.
+
+
+
+Definition at line 138 of file Heat\+Conduction.\+cpp.
+
+\mbox{\label{class_explicit_method_a096efa29c4315794c60182e31c54a45e}} 
+\index{Explicit\+Method@{Explicit\+Method}!solve@{solve}}
+\index{solve@{solve}!Explicit\+Method@{Explicit\+Method}}
+\subsubsection{solve()}
+{\footnotesize\ttfamily void Explicit\+Method\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Solve regroup the common part of the Explicit Method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void -\/ the result is stored in the vector u\+\_\+n of the mother Class 
+\end{DoxyReturn}
+
+
+Reimplemented from \textbf{ Heat\+Conduction} \doxyref{}{p.}{class_heat_conduction_ac176ea1a94c2fdb0da017b987ea22d1c}.
+
+
+
+Definition at line 147 of file Heat\+Conduction.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Heat\+Conduction.\+h}\item 
+\textbf{ Heat\+Conduction.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\section{Heat\+Conduction.\+h File Reference}
+\label{_heat_conduction_8h}\index{Heat\+Conduction.\+h@{Heat\+Conduction.\+h}}
+
+
+Different objects to resolve an Heat Conduction problem.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Heat\+Conduction}
+\begin{DoxyCompactList}\small\item\em Base abstract Class which include all the parameters to solve the problem. \end{DoxyCompactList}\item 
+class \textbf{ Analytical\+Solution}
+\begin{DoxyCompactList}\small\item\em Sub Class used to calculate the analytical solution. \end{DoxyCompactList}\item 
+class \textbf{ Explicit\+Method}
+\begin{DoxyCompactList}\small\item\em Sub Abstract Class used to calculate the Explicit scheme. \end{DoxyCompactList}\item 
+class \textbf{ Implicit\+Method}
+\begin{DoxyCompactList}\small\item\em Sub Abstract Class used to calculate the Implicit scheme. \end{DoxyCompactList}\item 
+class \textbf{ Du\+Fort\+\_\+\+Frankel}
+\begin{DoxyCompactList}\small\item\em Sub sub Class used to calculate the \doxyref{Du\+Fort\+\_\+\+Frankel}{p.}{class_du_fort___frankel} scheme. \end{DoxyCompactList}\item 
+class \textbf{ Richardson}
+\begin{DoxyCompactList}\small\item\em Sub sub Class used to calculate the \doxyref{Richardson}{p.}{class_richardson} scheme. \end{DoxyCompactList}\item 
+class \textbf{ Laasonen}
+\begin{DoxyCompactList}\small\item\em Sub sub Class used to calculate the \doxyref{Laasonen}{p.}{class_laasonen} scheme. \end{DoxyCompactList}\item 
+class \textbf{ Crank\+Nicholson}
+\begin{DoxyCompactList}\small\item\em Sub sub Class used to calculate the Crank-\/\+Nicholson scheme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Different objects to resolve an Heat Conduction problem. 
+
+\begin{DoxyAuthor}{Author}
+M Le Clec\textquotesingle{}h 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+05 December 2017
+\end{DoxyDate}
+There are 4 schemes which can be use \+:
+\begin{DoxyItemize}
+\item The Du\+Fort-\/\+Frankel scheme
+\item The \doxyref{Richardson}{p.}{class_richardson} scheme
+\item The \doxyref{Laasonen}{p.}{class_laasonen} scheme
+\item The Crank-\/\+Nicholson scheme It can also provide the analytical solution. 
+\end{DoxyItemize}
