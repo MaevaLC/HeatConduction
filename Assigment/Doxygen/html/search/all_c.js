@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['u_5fn',['u_n',['../class_heat_conduction.html#ac2e557e6d0c482dd49f78369c8d9f708',1,'HeatConduction']]],
-  ['u_5fnminus1',['u_nminus1',['../class_heat_conduction.html#ae5bf8bf1144632fad72a415023ca4461',1,'HeatConduction']]],
-  ['u_5fnplus1',['u_nplus1',['../class_heat_conduction.html#a6ad0488a3d4e3c9190b2abb3de8ccd2e',1,'HeatConduction']]]
+  ['r',['r',['../class_heat_conduction.html#ae152528bd4b7d0841854b32d037ace72',1,'HeatConduction']]],
+  ['richardson',['Richardson',['../class_richardson.html',1,'Richardson'],['../class_richardson.html#ae38842e27368e061f4f9ce3e692bcdbf',1,'Richardson::Richardson()']]]
 ];

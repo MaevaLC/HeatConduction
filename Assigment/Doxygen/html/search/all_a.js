@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['s',['s',['../class_heat_conduction.html#ad380b438b1ab0f6988342ac4023854da',1,'HeatConduction']]],
-  ['solve',['solve',['../class_heat_conduction.html#ac176ea1a94c2fdb0da017b987ea22d1c',1,'HeatConduction::solve()'],['../class_analytical_solution.html#afd1d8d955abbe0c5b7763544faad8dd2',1,'AnalyticalSolution::solve()'],['../class_explicit_method.html#a096efa29c4315794c60182e31c54a45e',1,'ExplicitMethod::solve()'],['../class_implicit_method.html#ae06909ac3cde1ae9fb216501c852e22c',1,'ImplicitMethod::solve()'],['../class_laasonen.html#a53cf5a72691175df0b3b6bdcbfee8c9b',1,'Laasonen::solve()'],['../class_crank_nicholson.html#a2846912cccce367888c37bf0e58f1cb1',1,'CrankNicholson::solve()']]]
+  ['n',['n',['../class_heat_conduction.html#ada703cd81a60d17a134b15499bbbef98',1,'HeatConduction']]],
+  ['norm_5fone',['norm_one',['../_norms_8cpp.html#a8a5dd7ae3578ecdb533ae37b7dd00086',1,'norm_one(std::vector&lt; double &gt; solution):&#160;Norms.cpp'],['../_norms_8h.html#a4eb114881aa581e7043bd66e04ba27d0',1,'norm_one(std::vector&lt; double &gt; solution):&#160;Norms.cpp']]],
+  ['norm_5ftwo',['norm_two',['../_norms_8cpp.html#acde0d182617c91cb757a10b1bb2281f1',1,'norm_two(std::vector&lt; double &gt; solution):&#160;Norms.cpp'],['../_norms_8h.html#a640d4f250d9b19707f3beef13f540f20',1,'norm_two(std::vector&lt; double &gt; solution):&#160;Norms.cpp']]],
+  ['norm_5funiform',['norm_uniform',['../_norms_8cpp.html#a87427a1c301886f335fd8485e638f9e2',1,'norm_uniform(std::vector&lt; double &gt; solution):&#160;Norms.cpp'],['../_norms_8h.html#a499e336aa7c1b95977115ce04115593c',1,'norm_uniform(std::vector&lt; double &gt; solution):&#160;Norms.cpp']]],
+  ['norms_2ecpp',['Norms.cpp',['../_norms_8cpp.html',1,'']]],
+  ['norms_2eh',['Norms.h',['../_norms_8h.html',1,'']]]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['tend',['Tend',['../class_heat_conduction.html#ab1d00caf79f4c04b420189eaf7c666e1',1,'HeatConduction']]],
-  ['text_5f0',['Text_0',['../class_heat_conduction.html#aeb50fb3189fd6545f765ef73c9be7889',1,'HeatConduction']]],
-  ['thomasalgorith',['ThomasAlgorith',['../class_implicit_method.html#ae06f9aa9d076738cdcb7cd967d453795',1,'ImplicitMethod']]],
-  ['tin_5f0',['Tin_0',['../class_heat_conduction.html#a2487010bf67582643ff59c0c5167725e',1,'HeatConduction']]]
+  ['u_5fn',['u_n',['../class_heat_conduction.html#ac2e557e6d0c482dd49f78369c8d9f708',1,'HeatConduction']]],
+  ['u_5fnminus1',['u_nminus1',['../class_heat_conduction.html#ae5bf8bf1144632fad72a415023ca4461',1,'HeatConduction']]],
+  ['u_5fnplus1',['u_nplus1',['../class_heat_conduction.html#a6ad0488a3d4e3c9190b2abb3de8ccd2e',1,'HeatConduction']]]
 ];

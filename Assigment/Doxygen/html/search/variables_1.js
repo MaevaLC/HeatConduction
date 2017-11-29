@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['n',['n',['../class_heat_conduction.html#ada703cd81a60d17a134b15499bbbef98',1,'HeatConduction']]]
+  ['b',['b',['../class_implicit_method.html#a2e2487e270f55de28c1f4db5d1b6bc0d',1,'ImplicitMethod']]]
 ];

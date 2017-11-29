@@ -16,7 +16,7 @@
 #include "HeatConduction.h"
 #include <cmath>
 
-const double pi = atan(1) * 4;
+const double pi = atan(1) * 4; //!< define pi
 
 //
 // ...... BASE CLASS ......
@@ -58,7 +58,6 @@ HeatConduction::HeatConduction(double Tin_0, double Text_0, double Xmin, double 
 * \fn void HeatConduction::solve()
 * \brief Abstract solve
 *
-* \param none
 * \return void - the result is stored in the vector u_n of the mother Class
 */
 void HeatConduction::solve() {}
@@ -67,7 +66,6 @@ void HeatConduction::solve() {}
 * \fn std::vector<double> HeatConduction::get_u_n() const
 * \brief Get method of the attribute u_n
 *
-* \param none
 * \return u_n - a vector attribute of the mother Class
 */
 std::vector<double> HeatConduction::get_u_n() const {
@@ -97,7 +95,6 @@ AnalyticalSolution::AnalyticalSolution(double Tin_0, double Text_0, double Xmin,
 * \fn void AnalyticalSolution::solve()
 * \brief Solve with the analytical solution
 *
-* \param none
 * \return void - the result is stored in the vector u_n of the mother Class
 */
 void AnalyticalSolution::solve(){
@@ -141,7 +138,6 @@ void ExplicitMethod::advance(int i){}
 * \fn void ExplicitMethod::solve()
 * \brief Solve regroup the common part of the Explicit Method
 *
-* \param none
 * \return void - the result is stored in the vector u_n of the mother Class
 */
 void ExplicitMethod::solve(){
@@ -197,7 +193,6 @@ ImplicitMethod::ImplicitMethod(double Tin_0, double Text_0, double Xmin, double 
 * \fn void ImplicitMethod::solve
 * \brief Abstract solve
 *
-* \param none
 * \return void - the result is stored in the vector u_n of the mother Class
 */
 void ImplicitMethod::solve() {}
@@ -206,7 +201,6 @@ void ImplicitMethod::solve() {}
 * \fn void ImplicitMethod::ThomasAlgorith()
 * \brief The Thomas Algorith, to solve Tridiagonal matrix problem
 *
-* \param none
 * \return void - the result is stored in the vector u_n of the mother Class
 */
 void ImplicitMethod::ThomasAlgorith() {
@@ -303,7 +297,6 @@ Laasonen::Laasonen(double Tin_0, double Text_0, double Xmin, double Xmax, double
 * \fn void Laasonen::solve()
 * \brief Solve method. The matrix abc and the vector d are define after the Laasonen scheme
 *
-* \param none
 * \return void - the result is stored in the vector u_n of the mother Class
 */
 void Laasonen::solve(){ 
@@ -350,7 +343,6 @@ CrankNicholson::CrankNicholson(double Tin_0, double Text_0, double Xmin, double 
 * \fn void CrankNicholson::solve()
 * \brief Solve method. The matrix abc and the vector d are define after the Crank-Nicholson scheme
 *
-* \param none
 * \return void - the result is stored in the vector u_n of the mother Class
 */
 void CrankNicholson::solve(){

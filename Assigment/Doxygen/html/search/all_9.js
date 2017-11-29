@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['r',['r',['../class_heat_conduction.html#ae152528bd4b7d0841854b32d037ace72',1,'HeatConduction']]],
-  ['richardson',['Richardson',['../class_richardson.html',1,'Richardson'],['../class_richardson.html#ae38842e27368e061f4f9ce3e692bcdbf',1,'Richardson::Richardson()']]]
+  ['m',['m',['../class_implicit_method.html#a40bd9e3fcd89952043c7c8a35011ba18',1,'ImplicitMethod']]]
 ];

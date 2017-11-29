@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cranknicholson',['CrankNicholson',['../class_crank_nicholson.html',1,'CrankNicholson'],['../class_crank_nicholson.html#ac14a4b871ca88ddc37e85990f16a3904',1,'CrankNicholson::CrankNicholson()']]]
+  ['b',['b',['../class_implicit_method.html#a2e2487e270f55de28c1f4db5d1b6bc0d',1,'ImplicitMethod']]]
 ];

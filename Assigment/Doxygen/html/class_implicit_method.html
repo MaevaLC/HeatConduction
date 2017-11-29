@@ -74,14 +74,21 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for ImplicitMethod:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_implicit_method.png" usemap="#ImplicitMethod_map" alt=""/>
-  <map id="ImplicitMethod_map" name="ImplicitMethod_map">
-<area href="class_heat_conduction.html" title="Base abstract Class which include all the parameters to solve the problem. " alt="HeatConduction" shape="rect" coords="56,0,158,24"/>
-<area href="class_crank_nicholson.html" title="Sub sub Class used to calculate the Crank-Nicholson scheme. " alt="CrankNicholson" shape="rect" coords="0,112,102,136"/>
-<area href="class_laasonen.html" title="Sub sub Class used to calculate the Laasonen scheme. " alt="Laasonen" shape="rect" coords="112,112,214,136"/>
+<div class="center"><img src="class_implicit_method__inherit__graph.png" border="0" usemap="#_implicit_method_inherit__map" alt="Inheritance graph"/></div>
+<map name="_implicit_method_inherit__map" id="_implicit_method_inherit__map">
+<area shape="rect" id="node3" href="class_crank_nicholson.html" title="Sub sub Class used to calculate the Crank&#45;Nicholson scheme. " alt="" coords="5,155,119,181"/>
+<area shape="rect" id="node4" href="class_laasonen.html" title="Sub sub Class used to calculate the Laasonen scheme. " alt="" coords="143,155,221,181"/>
+<area shape="rect" id="node2" href="class_heat_conduction.html" title="Base abstract Class which include all the parameters to solve the problem. " alt="" coords="65,5,179,32"/>
 </map>
- </div></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ImplicitMethod:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_implicit_method__coll__graph.png" border="0" usemap="#_implicit_method_coll__map" alt="Collaboration graph"/></div>
+<map name="_implicit_method_coll__map" id="_implicit_method_coll__map">
+<area shape="rect" id="node2" href="class_heat_conduction.html" title="Base abstract Class which include all the parameters to solve the problem. " alt="" coords="5,5,120,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -105,19 +112,24 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a40bd9e3fcd89952043c7c8a35011ba18"><td class="memItemLeft" align="right" valign="top"><a id="a40bd9e3fcd89952043c7c8a35011ba18"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>m</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_method.html#a40bd9e3fcd89952043c7c8a35011ba18">m</a></td></tr>
+<tr class="memdesc:a40bd9e3fcd89952043c7c8a35011ba18"><td class="mdescLeft">&#160;</td><td class="mdescRight">var needed in the Thomas Algorithm <br /></td></tr>
 <tr class="separator:a40bd9e3fcd89952043c7c8a35011ba18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fb476719886d49583938c8b40e4875e"><td class="memItemLeft" align="right" valign="top"><a id="a8fb476719886d49583938c8b40e4875e"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>a</b></td></tr>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_method.html#a8fb476719886d49583938c8b40e4875e">a</a></td></tr>
+<tr class="memdesc:a8fb476719886d49583938c8b40e4875e"><td class="mdescLeft">&#160;</td><td class="mdescRight">lower tridiagonal vector of the matrix <br /></td></tr>
 <tr class="separator:a8fb476719886d49583938c8b40e4875e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e2487e270f55de28c1f4db5d1b6bc0d"><td class="memItemLeft" align="right" valign="top"><a id="a2e2487e270f55de28c1f4db5d1b6bc0d"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>b</b></td></tr>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_method.html#a2e2487e270f55de28c1f4db5d1b6bc0d">b</a></td></tr>
+<tr class="memdesc:a2e2487e270f55de28c1f4db5d1b6bc0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">middle tridiagonal vector of the matrix <br /></td></tr>
 <tr class="separator:a2e2487e270f55de28c1f4db5d1b6bc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa66f38115300db94c12b7f95ad6c17f9"><td class="memItemLeft" align="right" valign="top"><a id="aa66f38115300db94c12b7f95ad6c17f9"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>c</b></td></tr>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_method.html#aa66f38115300db94c12b7f95ad6c17f9">c</a></td></tr>
+<tr class="memdesc:aa66f38115300db94c12b7f95ad6c17f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">upper tridiagonal vector of the matrix <br /></td></tr>
 <tr class="separator:aa66f38115300db94c12b7f95ad6c17f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e7d54136b7f6c21226b7de14b2308cb"><td class="memItemLeft" align="right" valign="top"><a id="a6e7d54136b7f6c21226b7de14b2308cb"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>d</b></td></tr>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_implicit_method.html#a6e7d54136b7f6c21226b7de14b2308cb">d</a></td></tr>
+<tr class="memdesc:a6e7d54136b7f6c21226b7de14b2308cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector on the right of the equation <br /></td></tr>
 <tr class="separator:a6e7d54136b7f6c21226b7de14b2308cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_heat_conduction"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_heat_conduction')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_heat_conduction.html">HeatConduction</a></td></tr>
 <tr class="memitem:a2487010bf67582643ff59c0c5167725e inherit pro_attribs_class_heat_conduction"><td class="memItemLeft" align="right" valign="top"><a id="a2487010bf67582643ff59c0c5167725e"></a>
@@ -260,7 +272,7 @@ std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_heat_conduction_8cpp_source.html#l00181">181</a> of file <a class="el" href="_heat_conduction_8cpp_source.html">HeatConduction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_heat_conduction_8cpp_source.html#l00177">177</a> of file <a class="el" href="_heat_conduction_8cpp_source.html">HeatConduction.cpp</a>.</p>
 
 </div>
 </div>
@@ -289,19 +301,13 @@ std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 </div><div class="memdoc">
 
 <p>Abstract solve. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">none</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>void - the result is stored in the vector u_n of the mother Class </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_heat_conduction.html#ac176ea1a94c2fdb0da017b987ea22d1c">HeatConduction</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_crank_nicholson.html#a2846912cccce367888c37bf0e58f1cb1">CrankNicholson</a>, and <a class="el" href="class_laasonen.html#a53cf5a72691175df0b3b6bdcbfee8c9b">Laasonen</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_heat_conduction_8cpp_source.html#l00203">203</a> of file <a class="el" href="_heat_conduction_8cpp_source.html">HeatConduction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_heat_conduction_8cpp_source.html#l00198">198</a> of file <a class="el" href="_heat_conduction_8cpp_source.html">HeatConduction.cpp</a>.</p>
 
 </div>
 </div>
@@ -321,15 +327,18 @@ std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 </div><div class="memdoc">
 
 <p>The Thomas Algorith, to solve Tridiagonal matrix problem. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">none</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>void - the result is stored in the vector u_n of the mother Class </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_heat_conduction_8cpp_source.html#l00212">212</a> of file <a class="el" href="_heat_conduction_8cpp_source.html">HeatConduction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_heat_conduction_8cpp_source.html#l00206">206</a> of file <a class="el" href="_heat_conduction_8cpp_source.html">HeatConduction.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_implicit_method_ae06f9aa9d076738cdcb7cd967d453795_icgraph.png" border="0" usemap="#class_implicit_method_ae06f9aa9d076738cdcb7cd967d453795_icgraph" alt=""/></div>
+<map name="class_implicit_method_ae06f9aa9d076738cdcb7cd967d453795_icgraph" id="class_implicit_method_ae06f9aa9d076738cdcb7cd967d453795_icgraph">
+<area shape="rect" id="node2" href="class_laasonen.html#a53cf5a72691175df0b3b6bdcbfee8c9b" title="Solve method. The matrix abc and the vector d are define after the Laasonen scheme. " alt="" coords="275,5,390,32"/>
+<area shape="rect" id="node3" href="class_crank_nicholson.html#a2846912cccce367888c37bf0e58f1cb1" title="Solve method. The matrix abc and the vector d are define after the Crank&#45;Nicholson scheme..." alt="" coords="257,56,408,83"/>
+</map>
+</div>
 
 </div>
 </div>

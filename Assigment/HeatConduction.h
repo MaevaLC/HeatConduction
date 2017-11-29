@@ -84,11 +84,11 @@ public:
 */
 class ImplicitMethod : public HeatConduction{
 protected:
-	double m;
-	std::vector<double> a;
-	std::vector<double> b;
-	std::vector<double> c;
-	std::vector<double> d;
+	double m; //!< var needed in the Thomas Algorithm
+	std::vector<double> a; //!< lower tridiagonal vector of the matrix
+	std::vector<double> b; //!< middle tridiagonal vector of the matrix
+	std::vector<double> c; //!< upper tridiagonal vector of the matrix
+	std::vector<double> d; //!< vector on the right of the equation
 public:
 	ImplicitMethod(double Tin_0, double Text_0, double Xmin, double Xmax, double Tend, double D, double dx, double dt);
 	virtual void solve();

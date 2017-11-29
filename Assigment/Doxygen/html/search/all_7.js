@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['laasonen',['Laasonen',['../class_laasonen.html',1,'Laasonen'],['../class_laasonen.html#a31c8458bc908b985f992560b995b8d56',1,'Laasonen::Laasonen()']]]
+  ['implicitmethod',['ImplicitMethod',['../class_implicit_method.html',1,'ImplicitMethod'],['../class_implicit_method.html#aa1169b777d7e6406f2a754da0fa9b515',1,'ImplicitMethod::ImplicitMethod()']]]
 ];
