@@ -1,9 +1,0 @@
-<map id="HeatConduction" name="HeatConduction">
-<area shape="rect" id="node2" href="$class_analytical_solution.html" title="Sub Class used to calculate the analytical solution. " alt="" coords="5,387,152,479"/>
-<area shape="rect" id="node3" href="$class_explicit_method.html" title="Sub Abstract Class used to calculate the Explicit scheme. " alt="" coords="176,380,304,487"/>
-<area shape="rect" id="node6" href="$class_implicit_method.html" title="Sub Abstract Class used to calculate the Implicit scheme. " alt="" coords="329,351,461,516"/>
-<area shape="rect" id="node4" href="$class_du_fort___frankel.html" title="Sub sub Class used to calculate the DuFort_Frankel scheme. " alt="" coords="35,564,165,656"/>
-<area shape="rect" id="node5" href="$class_richardson.html" title="Sub sub Class used to calculate the Richardson scheme. " alt="" coords="189,564,296,656"/>
-<area shape="rect" id="node7" href="$class_crank_nicholson.html" title="Sub sub Class used to calculate the Crank&#45;Nicholson scheme. " alt="" coords="325,564,459,656"/>
-<area shape="rect" id="node8" href="$class_laasonen.html" title="Sub sub Class used to calculate the Laasonen scheme. " alt="" coords="483,564,581,656"/>
-</map>
