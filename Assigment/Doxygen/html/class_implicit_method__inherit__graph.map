@@ -1,5 +1,5 @@
 <map id="ImplicitMethod" name="ImplicitMethod">
-<area shape="rect" id="node3" href="$class_crank_nicholson.html" title="Sub sub Class used to calculate the Crank&#45;Nicholson scheme. " alt="" coords="5,155,119,181"/>
-<area shape="rect" id="node4" href="$class_laasonen.html" title="Sub sub Class used to calculate the Laasonen scheme. " alt="" coords="143,155,221,181"/>
-<area shape="rect" id="node2" href="$class_heat_conduction.html" title="Base abstract Class which include all the parameters to solve the problem. " alt="" coords="65,5,179,32"/>
+<area shape="rect" id="node3" href="$class_crank_nicholson.html" title="Sub sub Class used to calculate the Crank&#45;Nicholson scheme. " alt="" coords="5,564,139,656"/>
+<area shape="rect" id="node4" href="$class_laasonen.html" title="Sub sub Class used to calculate the Laasonen scheme. " alt="" coords="163,564,261,656"/>
+<area shape="rect" id="node2" href="$class_heat_conduction.html" title="Base abstract Class which include all the parameters to solve the problem. " alt="" coords="74,5,209,303"/>
 </map>

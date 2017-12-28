@@ -1,6 +1,6 @@
 /**
 * \file      Norms.h
-* \author    M Le Clec'h
+* \author    m.leclech
 * \version   1.0
 * \date      05 December 2017
 * \brief     Functions to calculates norms

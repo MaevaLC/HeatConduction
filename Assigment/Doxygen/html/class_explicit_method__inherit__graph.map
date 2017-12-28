@@ -1,5 +1,5 @@
 <map id="ExplicitMethod" name="ExplicitMethod">
-<area shape="rect" id="node3" href="$class_du_fort___frankel.html" title="Sub sub Class used to calculate the DuFort_Frankel scheme. " alt="" coords="5,155,116,181"/>
-<area shape="rect" id="node4" href="$class_richardson.html" title="Sub sub Class used to calculate the Richardson scheme. " alt="" coords="140,155,227,181"/>
-<area shape="rect" id="node2" href="$class_heat_conduction.html" title="Base abstract Class which include all the parameters to solve the problem. " alt="" coords="65,5,179,32"/>
+<area shape="rect" id="node3" href="$class_du_fort___frankel.html" title="Sub sub Class used to calculate the DuFort_Frankel scheme. " alt="" coords="5,505,136,597"/>
+<area shape="rect" id="node4" href="$class_richardson.html" title="Sub sub Class used to calculate the Richardson scheme. " alt="" coords="160,505,267,597"/>
+<area shape="rect" id="node2" href="$class_heat_conduction.html" title="Base abstract Class which include all the parameters to solve the problem. " alt="" coords="74,5,209,303"/>
 </map>

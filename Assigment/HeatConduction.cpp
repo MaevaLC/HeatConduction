@@ -1,6 +1,6 @@
 /**
 * \file      HeatConduction.cpp
-* \author    M Le Clec'h
+* \author    m.leclech
 * \version   1.0
 * \date      05 December 2017
 * \brief     Different objects to resolve an Heat Conduction problem.

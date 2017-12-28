@@ -1,8 +1,9 @@
-﻿La génération a démarré 29/11/2017 23:24:27.
+﻿La génération a démarré 11/12/2017 17:26:07.
      1>Projet "D:\Cranfield\C++\Assigment\Assigment\Assigment.vcxproj" sur le nœud 2 (Build cible(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt HeatConduction.cpp main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt HeatConduction.cpp Norms.cpp main.cpp
          main.cpp
+         Norms.cpp
          HeatConduction.cpp
          Génération de code en cours...
        Link:
@@ -16,4 +17,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:03.15
+Temps écoulé 00:00:01.91

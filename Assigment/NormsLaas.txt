@@ -1,8 +1,0 @@
-Scheme @0.010000 : Norm One // Norm Two // Uniform Norm
-LSI : 4.10 1.10 0.39
-Scheme @0.025000 : Norm One // Norm Two // Uniform Norm
-LSI : 12.31 3.11 1.03
-Scheme @0.050000 : Norm One // Norm Two // Uniform Norm
-LSI : 26.44 6.57 2.16
-Scheme @0.100000 : Norm One // Norm Two // Uniform Norm
-LSI : 54.60 13.62 4.50
